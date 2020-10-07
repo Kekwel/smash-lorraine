@@ -1,0 +1,19 @@
+bans-stage, #bans-stage {
+	display: block;
+	padding: 1em;
+}
+
+.BANNED {
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+}
+
+.cross {
+	position: absolute;
+	padding: 16px;
+	margin-top: 40px;
+}
+
+.j2 {
+	filter: hue-rotate(200deg);
+}
