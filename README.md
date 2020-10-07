@@ -1,5 +1,15 @@
 # Smash Lorraine
 
+Site vitrine de la communauté Lorraine de Super Smash Bros. Site en développement.
+* Gestion des bans de stages sur une seule page ou bien sur plusieurs via des lobbies.
+* **TODO** Présentation de la *future* association SL
+* **TODO** Informations concernant les tournois (weeklies, lieu, date, etc)
+* **TODO** Création de PR locaux, à la https://le-smash-dijonnais.fr/rank/
+* **TODO** Présentation des différents joueurs de ces PR
+* **TODO** Et d'autres choses en réflexion !
+
+---
+
 This is an example project that can be used as a starting point to create your own Vaadin application with Spring Boot.
 It contains all the necessary configuration and some placeholder files to get you started.
 
