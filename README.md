@@ -1,12 +1,24 @@
-# Smash Lorraine
+# Smash Stage Striker (non-définitif)
 
-Site vitrine de la communauté Lorraine de Super Smash Bros. Site en développement.
-* Gestion des bans de stages sur une seule page ou bien sur plusieurs via des lobbies.
-* **TODO** Présentation de la *future* association SL
-* **TODO** Informations concernant les tournois (weeklies, lieu, date, etc)
-* **TODO** Création de PR locaux, à la https://le-smash-dijonnais.fr/rank/
-* **TODO** Présentation des différents joueurs de ces PR
-* **TODO** Et d'autres choses en réflexion !
+Site en développement..
+* Gestion des bans de stages
+  * Utilisation de lobbies, joignable avec un identifiant
+  * Entre 2 joueurs, avec possibilité d'être "spectateur" (impossibilité d'intéragir)
+
+---
+# Roadmap
+* Gestion d'un ban
+  * Game 1 ? Game X ? Bo3 ? Bo5 ?
+  * A J1 ou J2 de bannir ?
+  * "Privatisé" les lobbies
+* Partie TO
+  * Import de match depuis smashgg, challonge, ...
+  * Gestion du ruleset (stages, étapes de ban (1-2-1, etc)
+* Statistiques
+  * Nombre de stage bannis, lequel en 1er, en fonction du joueur, etc
+  * Par tournois
+* Autres ..
+  * A définir
 
 ---
 
