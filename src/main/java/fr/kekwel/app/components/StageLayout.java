@@ -7,20 +7,19 @@ import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import fr.kekwel.app.data.entity.Joueur;
+import fr.kekwel.app.data.entity.push.InfoStage;
 import fr.kekwel.app.utils.Broadcaster;
 import fr.kekwel.app.utils.Constants;
 import fr.kekwel.app.utils.Constants.BanStatut;
-import fr.kekwel.app.utils.Constants.Stage;
-import lombok.Getter;
+import fr.kekwel.app.utils.Constants.StageEnum;
 import lombok.Setter;
-import lombok.ToString;
 
 public class StageLayout extends VerticalLayout {
 
 	@Setter
 	private String idLobby;
 	private BanStatut statut = BanStatut.NOT_BANNED;
-	private Stage stage;
+	private StageEnum stage;
 	
 	@Setter
 	private Joueur currentJ;
@@ -33,7 +32,7 @@ public class StageLayout extends VerticalLayout {
 	private RippleClickableCard card;
 	private Image cross;
 	
-	public StageLayout(String idLobby, Stage stage) {
+	public StageLayout(String idLobby, StageEnum stage) {
 		setWidth(null);
 		setId(stage.name());
 		setSpacing(false);
@@ -85,7 +84,7 @@ public class StageLayout extends VerticalLayout {
 			
 //			Notification.show(title + " : " + this.statut);
 			InfoStage infoStage = new InfoStage(idLobby, stage, statut, currentJ);
-	        Broadcaster.broadcast(infoStage);
+	        Broadcaster.broadcastInfoStage(infoStage);
 		});
 		
 		return card;
@@ -118,7 +117,7 @@ public class StageLayout extends VerticalLayout {
 		
 		if (sendPUSH) {
 			InfoStage infoStage = new InfoStage(idLobby, stage, statut, currentJ);
-	        Broadcaster.broadcast(infoStage);
+	        Broadcaster.broadcastInfoStage(infoStage);
 		}
 	}
 	
@@ -129,27 +128,5 @@ public class StageLayout extends VerticalLayout {
 		cross.setWidth("170px");
 		cross.addClassName("cross");
 		return cross;
-	}
-	
-	// TODO déplacer ?
-	@ToString
-	public class InfoStage {
-		@Getter
-		String idLobby;
-		@Getter
-		Stage stage;
-		@Getter
-		BanStatut statut;
-		
-		// Joueur
-		@Getter
-		Joueur joueur;
-		
-		public InfoStage(String id, Stage s, BanStatut b, Joueur j) {
-			idLobby = id;
-			stage = s;
-			statut = b;
-			joueur = j;
-		}
 	}
 }

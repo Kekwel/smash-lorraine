@@ -10,7 +10,7 @@ public class Constants {
 	}
 	
 	public static final String stagePath = "images/stages";
-	public enum Stage {
+	public enum StageEnum {
 		BF ("Battlefield", stagePath + "/BF.jpg"),
 		FD ("Final Destination", stagePath + "/FD.jpg"),
 		PS2 ("Pokemon Stadium 2", stagePath + "/PS2.jpg"),
@@ -23,13 +23,13 @@ public class Constants {
 		private String title;
 		@Getter
 		private String imgPath;
-		Stage(String title, String imgPath) {
+		StageEnum(String title, String imgPath) {
 			this.title = title;
 			this.imgPath = imgPath;
 		}
 	}
 	
-	public static final Stage[] stagelist_Helios = new Stage[] {Stage.BF, Stage.FD, Stage.PS2, Stage.SBF, Stage.SV, Stage.TC, Stage.YS};
+	public static final StageEnum[] stagelist_Helios = new StageEnum[] {StageEnum.BF, StageEnum.FD, StageEnum.PS2, StageEnum.SBF, StageEnum.SV, StageEnum.TC, StageEnum.YS};
 
 	/* ---- */
 	public static String crossPath = "images/cross_j1.png";
