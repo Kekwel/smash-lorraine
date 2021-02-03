@@ -9,7 +9,6 @@ import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.html.H1;
-import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -38,14 +37,15 @@ import fr.kekwel.app.views.empty.EmptyView;
 public class MainView extends AppLayout {
 
     private final Tabs menu;
-    private H1 viewTitle;
+    private H1 viewTitle = new H1();
 
     public MainView() {
         setPrimarySection(Section.DRAWER);
-        addToNavbar(true, createHeaderContent());
-        
         menu = createMenu();
-        addToDrawer(createDrawerContent(menu));
+
+//        addToNavbar(true, createHeaderContent());
+        addToNavbar(true, menu);
+//        addToDrawer(createDrawerContent(menu));
     }
 
     private Component createHeaderContent() {
@@ -56,9 +56,9 @@ public class MainView extends AppLayout {
         layout.setSpacing(false);
         layout.setAlignItems(FlexComponent.Alignment.CENTER);
         layout.add(new DrawerToggle());
-        viewTitle = new H1();
         layout.add(viewTitle);
-        layout.add(new Image("images/user.svg", "Avatar"));
+        // TODO
+//        layout.add(new Image("images/user.svg", "Avatar"));
         return layout;
     }
 
@@ -74,15 +74,15 @@ public class MainView extends AppLayout {
         logoLayout.setId("logo");
         logoLayout.setAlignItems(FlexComponent.Alignment.CENTER);
         // TODO a modif
-        logoLayout.add(new Image("images/logo_SL.png", "Smash Lorraine"));
-        logoLayout.add(new H1("Smash Lorraine"));
+//        logoLayout.add(new Image("images/logo_SL.png", "Smash Lorraine"));
+        logoLayout.add(new H1("Smash Stage Striker"));
         layout.add(logoLayout, menu);
         return layout;
     }
 
     private Tabs createMenu() {
         final Tabs tabs = new Tabs();
-        tabs.setOrientation(Tabs.Orientation.VERTICAL);
+        tabs.setOrientation(Tabs.Orientation.HORIZONTAL);
         tabs.addThemeVariants(TabsVariant.LUMO_MINIMAL);
         tabs.setId("tabs");
         tabs.add(createMenuItems());
